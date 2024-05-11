@@ -1,4 +1,5 @@
-or ;
+not( false and true and) ;
+false ;
 nottrue;
 (true  ;
 not( false and true ) ;
@@ -8,8 +9,8 @@ true true  ;
   not  (   false and true or   false );
 false and not;
 oooooooooo ;
-true  ;
-false ;
+true;
+false;
             
 
  

@@ -51,6 +51,19 @@ public class Derivacion {
 
 
     public int estadoS(int x){
+
+        if (this.tokens.size()==1){
+            //if (posicion <  this.tokens.size()){
+            System.out.println("nomas es uno");
+            if (this.tokens.get(posicion).toString().equals("true") || this.tokens.get(posicion).toString().equals("false")){
+                posicion+=1;
+                estadoX();
+            }
+
+
+            //estadoE(posicion);
+        }
+
         if (posicion <  this.tokens.size()-1){
         //if (posicion <  this.tokens.size()){
             System.out.println("uwu");
@@ -67,13 +80,14 @@ public class Derivacion {
 
     public int estadoE(int x){
         if (estadoX()) {
-            if (this.tokens.get(posicion).toString().equals("true") || this.tokens.get(posicion).toString().equals("false") || this.tokens.get(posicion).toString().equals("(") || this.tokens.get(posicion).toString().equals(")") || this.tokens.get(posicion).toString().equals("not")) {
+            if (this.tokens.get(posicion).toString().equals("true") || this.tokens.get(posicion).toString().equals("false") || this.tokens.get(posicion).toString().equals("(") || this.tokens.get(posicion).toString().equals(")") || this.tokens.get(posicion).toString().equals("not")){
 
                 return estadoT(posicion);
 
             }
+
             if (this.tokens.get(posicion).equals("or")) {
-                estadoX();
+                //estadoX();
                 posicion += 1;
                 return estadoE(posicion);
             }

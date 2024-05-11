@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 // version de java 17
 public class Main {
@@ -28,19 +29,33 @@ public class Main {
         System.out.println("pila = " + pila);
 
 
+        //ArrayList<Boolean> pilafinal = new ArrayList<>();
         ArrayList<Boolean> pilafinal = new ArrayList<>();
 
         Derivacion dev = new Derivacion(pila.get(0));
         //dev.isEstadoAceptacion();
         System.out.println("tons que mami");
         System.out.println(dev.isEstadoAceptacion());
-        //for (int i = 0; i < pila.size(); i++) {
-          //  Derivacion dev = new Derivacion(pila.get(i));
-            //boolean correcto = dev.Derivacion2(pila.get(i));
+        for (int i = 0; i < pila.size(); i++) {
+            Derivacion itera = new Derivacion(pila.get(i));
+            boolean correcto = itera.isEstadoAceptacion();
 
-            //pilafinal.add(correcto);
-            // token = String.valueOf(pila.get(i));
-        //}
+            pilafinal.add(correcto);
+            //token = String.valueOf(pila.get(i));
+        }
+        System.out.println(pilafinal);
+
+        //Collections.replaceAll(pilafinal, true, "valido");
+        //pilafinal.replaceAll(pilafinal,true,"valido");
+        for (int i = 0; i < pila.size(); i++){
+            String choro;
+            if (pilafinal.get(i)){
+                choro = "cadena valida    ✓";
+            }else {
+                choro="cadena invalida    x";
+            }
+            System.out.println(x.get(i) +" ----------> " + choro);
+        }
 
     }
 }

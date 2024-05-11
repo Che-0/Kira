@@ -132,20 +132,21 @@ public class Analisistk {
                 contadorCaract +=1;
                 if (this.palabra[contadorCaract].equals("r")){
                     //System.out.println("r esta chido");
-                    contadorCaract +=1;
-                }else{
-                    this.bien = false;
-                    return;
-                }
-
-                if (this.palabra[contadorCaract].equals(" ")){
-                    //System.out.println("or esta chido");
                     pila.add("or");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+//
+//                if (this.palabra[contadorCaract].equals(" ")){
+//                    //System.out.println("or esta chido");
+//                    pila.add("or");
+//                    contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+                //}
                 break;
 
             case "t":
