@@ -1,3 +1,5 @@
+(true  ;
+not( false and true  ;
 and   ;
 (true );
 true true  ;

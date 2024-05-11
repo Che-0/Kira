@@ -11,6 +11,9 @@ public class Derivacion {
     ArrayList<String> tokens = new ArrayList<String>(); //lista que contendra los tokens
     int posicion = 0;  // contador que indicara la posicion de elemnto de la lista de tokens
 
+    boolean usa_parentesis = false;
+    boolean espera;
+
     public boolean isEstadoAceptacion() {
         return estadoAceptacion;
     }
@@ -25,6 +28,20 @@ public class Derivacion {
 
         //inicial();
         int aux = estadoS(posicion);
+//        if (espera){
+//            estadoAceptacion = false;
+//        }else{
+//            estadoAceptacion = true;
+//        }
+
+        if(usa_parentesis){
+            if (espera == true){
+                estadoAceptacion = false;
+        }
+            if (espera == false){
+                estadoAceptacion = true;
+            }
+        }
         System.out.println("el estado es");
         System.out.println(estadoAceptacion);
 
@@ -86,6 +103,17 @@ public class Derivacion {
                 posicion += 1;
                 return estadoT(posicion);
             }
+
+//            if (this.tokens.get(posicion).equals("(")) {
+//                //estadoX();
+//                posicion += 1;
+//                //espera que dira si se cerro el parentesis
+//
+//                return estadoT(posicion);
+//            }
+
+
+
             return estadoE(posicion);
 
         }else {
@@ -99,7 +127,7 @@ public class Derivacion {
         {
 
 
-            if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false") || this.tokens.get(posicion).equals(")") || this.tokens.get(posicion).equals("not")) {
+            if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false") || this.tokens.get(posicion).equals("not")) {
                 // //// estadoX();
                 posicion += 1;
 
@@ -107,9 +135,19 @@ public class Derivacion {
             }
             if (this.tokens.get(posicion).equals("(")) {
                 //estadoX();
+                usa_parentesis = true;
                 posicion += 1;
-                return estadoE(posicion);
+                espera = true;
+                return estadoF(posicion);
             }
+            if (this.tokens.get(posicion).equals(")")) {
+                //estadoX();
+                espera = false;
+                posicion += 1;
+
+                return estadoF(posicion);
+            }
+
             return estadoT(posicion);
         }else {
             return estadoS(posicion);
@@ -121,7 +159,7 @@ public class Derivacion {
     public boolean estadoX(){
         System.out.println(posicion);
         //System.out.println(this.tokens.size()-1);
-        if (posicion  >= this.tokens.size()-1){
+        if (posicion  > this.tokens.size()-1){
             estadoAceptacion = true;
             //estadoS(posicion);
             return false;
