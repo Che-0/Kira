@@ -1,3 +1,5 @@
+and   ;
+(true );
 true true  ;
   not  (   false and true or   false );
 false and not;
