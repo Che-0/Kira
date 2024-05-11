@@ -60,12 +60,32 @@ public class Analisistk {
                 }
                 if (this.palabra[contadorCaract].equals("t")){
                     //System.out.println("t ta chido");
+//                    if (this.palabra[contadorCaract+1].equals(" ") || this.palabra[contadorCaract].equals("(") ) {
+//                        pila.add("not");
+//                        contadorCaract +=1;
+//                    }else{
+//                        this.bien = false;
+//                        pila.add("Null");
+//                        return;
+//                    }
+
+
                     pila.add("not");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+
+                //////////////////////////////////////
+//                if (this.palabra[contadorCaract].equals(" ") || this.palabra[contadorCaract].equals("(") ){
+//                    //System.out.println("t ta chido");
+//                    //pila.add("not");
+//                    //contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+//                }
 //                if (this.palabra[contadorCaract].equals(" ")){
 //                    System.out.println("not esta chdio");
 //                    pila.add("not");
@@ -149,21 +169,21 @@ public class Analisistk {
 
                 if (this.palabra[contadorCaract].equals("e")){
                     //System.out.println("e esta chido");
-                    //pila.add("true");
-                    contadorCaract +=1;
-                }else{
-                    this.bien = false;
-                    return;
-                }
-
-                if (this.palabra[contadorCaract].equals(" ")){
-                    //System.out.println("true esta chido");
                     pila.add("true");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+
+//                if (this.palabra[contadorCaract].equals(" ")){
+//                    //System.out.println("true esta chido");
+//                    pila.add("true");
+//                    contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+//                }
                 break;
 
             case "f":
@@ -194,21 +214,21 @@ public class Analisistk {
 
                 if (this.palabra[contadorCaract].equals("e")){
                     //System.out.println("e esta chido");
-                    //pila.add("false");
-                    contadorCaract +=1;
-                }else{
-                    this.bien = false;
-                    return;
-                }
-
-                if (this.palabra[contadorCaract].equals(" ")){
-                    //System.out.println("false esta chido");
                     pila.add("false");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+
+//                if (this.palabra[contadorCaract].equals(" ")){
+//                    //System.out.println("false esta chido");
+//                    pila.add("false");
+//                    contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+//                }
 
                 break;
 

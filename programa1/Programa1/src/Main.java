@@ -30,7 +30,7 @@ public class Main {
 
         ArrayList<Boolean> pilafinal = new ArrayList<>();
 
-        Derivacion dev = new Derivacion(pila.get(3));
+        Derivacion dev = new Derivacion(pila.get(0));
         //dev.isEstadoAceptacion();
         System.out.println("tons que mami");
         System.out.println(dev.isEstadoAceptacion());

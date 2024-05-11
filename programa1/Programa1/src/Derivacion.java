@@ -26,42 +26,33 @@ public class Derivacion {
         System.out.println(this.tokens);   //para imprimir la lista y ver si esta bien
         //System.out.println(this.tokens.get(1)); //traer el primer elemento 2
 
-        //inicial();
-        int aux = estadoS(posicion);
-//        if (espera){
-//            estadoAceptacion = false;
-//        }else{
-//            estadoAceptacion = true;
-//        }
+        if (this.tokens != null){
+            int aux = estadoS(posicion);
 
-        if(usa_parentesis){
-            if (espera == true){
-                estadoAceptacion = false;
-        }
-            if (espera == false){
-                estadoAceptacion = true;
+            if(usa_parentesis){
+                if (espera == true){
+                    estadoAceptacion = false;
+                }
+                if (espera == false){
+                    estadoAceptacion = true;
+                }
             }
+            System.out.println("el estado es");
+            System.out.println(estadoAceptacion);
         }
-        System.out.println("el estado es");
-        System.out.println(estadoAceptacion);
+        if (this.tokens == null){
+            estadoAceptacion = false;
+        }
 
-//        if (posicion > this.tokens.size()){
-//            System.out.println("cadena chida");
-//            return;
-//        }
-//        else{
-//            System.out.println("huevos");
-//        }
+
+
     }
 
-    public void inicial(){
-        int ll = estadoS(posicion);
-        System.out.println("fin");
-        return;
-    }
+
 
     public int estadoS(int x){
         if (posicion <  this.tokens.size()-1){
+        //if (posicion <  this.tokens.size()){
             System.out.println("uwu");
 
             estadoE(posicion);
@@ -88,6 +79,8 @@ public class Derivacion {
             }
             return estadoS(posicion);
         }else{
+            estadoAceptacion = false;
+            posicion+=1;
             return estadoS(posicion);
         }
     }
