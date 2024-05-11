@@ -25,7 +25,13 @@ public class Listatk {
                 if (!linea.isEmpty()) {
 
                     if (linea.substring(linea.length() - 1).equals(";")){
-                        listaTokens.add(linea);
+                        //String aux = tokens.remove(tokens.size()-1);
+//                        ArrayList<String> aux = new ArrayList<String>();
+//                        aux.add(linea);
+//                        System.out.println(aux);
+//                        aux.remove(aux.size()-1);
+                        //linea.replace(";"," ");
+                        listaTokens.add(linea.replace(";",""));
                     }else {
                         listaTokens.add("Null");
                     }

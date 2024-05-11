@@ -17,6 +17,7 @@ public class Analisistk {
             pila.add("Null");
             return;}
         //////
+
         this.palabra = palabra.split("");
         //System.out.println("la palabra es "+palabra);
         // Imprime el arreglo de strings
