@@ -2,9 +2,7 @@
 // recibe por ejemplo [not,(,true, and, false, ),] <---- Tiene que esta en una lista que contemga cada elemento;
 
 
-import javax.xml.stream.FactoryConfigurationError;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Derivacion {
 
@@ -82,8 +80,9 @@ public class Derivacion {
 
             if (this.tokens.get(posicion).equals("or")) {
                 //estadoX();
-                posicion += 1;
-                return estadoE(posicion);
+                //posicion += 1;
+                //estadoX();
+                return estadoE2(posicion);
             }
             return estadoS(posicion);
         }else{
@@ -91,6 +90,13 @@ public class Derivacion {
             posicion+=1;
             return estadoS(posicion);
         }
+    }
+
+
+    public int estadoE2(int x){
+        posicion += 1;
+
+        return estadoT(posicion);
     }
 
     public int estadoT(int x) {
@@ -101,8 +107,8 @@ public class Derivacion {
             }
             if (this.tokens.get(posicion).equals("and")) {
                 //estadoX();
-                posicion += 1;
-                return estadoT(posicion);
+                //posicion += 1;
+                return estadoT2(posicion);
             }
             return estadoE(posicion);
 
@@ -111,13 +117,18 @@ public class Derivacion {
         }
     }
 
+    public int estadoT2(int x){
+        posicion += 1;
+        return estadoF(posicion);
+    }
+
 
     public int estadoF(int x){
         if (estadoX())
         {
 
 
-            if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false") || this.tokens.get(posicion).equals("not")) {
+            if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false")) {
                 // //// estadoX();
                 posicion += 1;
 
@@ -138,12 +149,22 @@ public class Derivacion {
                 return estadoF(posicion);
             }
 
+            if (this.tokens.get(posicion).equals("not")) {
+                //estadoX();
+                return estadoF2(posicion);
+            }
+
             return estadoT(posicion);
         }else {
             return estadoS(posicion);
         }
 
 
+    }
+
+    public int estadoF2(int x){
+        posicion +=1;
+        return estadoF(posicion);
     }
 
     public boolean estadoX(){
