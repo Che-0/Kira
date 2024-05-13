@@ -17,35 +17,64 @@ public class Derivacion {
     public Derivacion(String tonken) {
         this.tokens = tonken;
         System.out.println(this.tokens);
-        //if (this.tokens != "Null"){
+        if (this.tokens != "Null"){
+            System.out.println(this.tokens.length());
+            for (int i=0 ; i < this.tokens.length() ; i++){
+                char result = this.tokens.charAt(i);
+                if (result != ' '){
+                    caracteres.add(String.valueOf(result));
+                }
 
-        //}
+            }
+            System.out.println(caracteres);
+            //caracteres.remove(";");
+            System.out.println(caracteres);
 
-        System.out.println(this.tokens.length());
-        for (int i=0 ; i < this.tokens.length() ; i++){
-            char result = this.tokens.charAt(i);
-            if (result != ' '){
-                caracteres.add(String.valueOf(result));
+            //while (this.posicion < this.tokens.length()-1){
+            while (bandera != this.caracteres.size()-1){
+                inicialS();
+                System.out.println(bandera);
+                System.out.println(this.caracteres.size()-1);
+            }
+            System.out.println(pila);
+
+            //if (pila.get(0) == ";"){
+            if (pila.size() == 1){
+                correcto = "cadena valida    ✓";
+            }else{
+                correcto = "cadena invalida    x";
             }
 
         }
-        System.out.println(caracteres);
-        //caracteres.remove(";");
-        System.out.println(caracteres);
-
-        //while (this.posicion < this.tokens.length()-1){
-        while (bandera != this.caracteres.size()-1){
-            inicialS();
-            System.out.println(bandera);
-            System.out.println(this.caracteres.size()-1);
-        }
-        System.out.println(pila);
-
-        if (pila.get(0) == ";"){
-            correcto = "cadena valida    ✓";
-        }else{
+        if (this.tokens == "Null"){
             correcto = "cadena invalida    x";
         }
+
+//        System.out.println(this.tokens.length());
+//        for (int i=0 ; i < this.tokens.length() ; i++){
+//            char result = this.tokens.charAt(i);
+//            if (result != ' '){
+//                caracteres.add(String.valueOf(result));
+//            }
+//
+//        }
+//        System.out.println(caracteres);
+//        //caracteres.remove(";");
+//        System.out.println(caracteres);
+//
+//        //while (this.posicion < this.tokens.length()-1){
+//        while (bandera != this.caracteres.size()-1){
+//            inicialS();
+//            System.out.println(bandera);
+//            System.out.println(this.caracteres.size()-1);
+//        }
+//        System.out.println(pila);
+//
+//        if (pila.get(0) == ";"){
+//            correcto = "cadena valida    ✓";
+//        }else{
+//            correcto = "cadena invalida    x";
+//        }
 
     }
 

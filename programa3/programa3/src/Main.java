@@ -15,16 +15,23 @@ public class Main {
         //System.out.println(result);
         //System.out.println((uno.chars());
 
-        Derivacion dev = new Derivacion(x.get(1));
+        //Derivacion dev = new Derivacion(x.get(5));
+        //System.out.println(dev.getCorrecto());
+        ArrayList<String>  pilafinal = new ArrayList<String>();
 
-        //ArrayList<String>  pilafinal = new ArrayList<String>();
-
-//        for (int i=0 ; i< x.size() ; i++){
-//            Derivacion dev = new Derivacion(x.get(i));
-//            pilafinal.add(dev.getCorrecto());
-//        }
+        for (int i=0 ; i< x.size() ; i++){
+            Derivacion dev = new Derivacion(x.get(i));
+            pilafinal.add(dev.getCorrecto());
+        }
 //
-//        System.out.println(pilafinal);
+        //System.out.println(pilafinal);
+
+        System.out.println("--------- Analisis -----------");
+
+        for(int i=0 ; i< x.size() ; i++){
+            System.out.println(x.get(i) + " --------> " + pilafinal.get(i) );
+
+        }
 
         }
 }
