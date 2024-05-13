@@ -6,3 +6,9 @@ true or false;
 
 and ;
 true and false;
+(and);
+(true and false ;
+(true and false) ;
+;
+  ;
+true;
