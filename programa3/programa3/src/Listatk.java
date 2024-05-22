@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 /// Esta pendejada lee el archivo de conf.txt
-// guarda los caracteres y elimina el ";"
+// guarda los caracteres y sha
 
 public class Listatk {
 
@@ -24,7 +24,6 @@ public class Listatk {
                 String linea = obj.nextLine();
                 if (!linea.isEmpty()) {
                     if (linea.substring(linea.length() - 1).equals(";")){
-
                         //System.out.println(linea.chars());
                         listaTokens.add(linea);
                     }else {

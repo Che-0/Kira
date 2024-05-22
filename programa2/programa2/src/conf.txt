@@ -12,3 +12,9 @@ true and false;
 ;
   ;
 true;
+not( not true or true ) and (true) ;
+not( not true or true ) and (true) and ;
+not( not true or true ) and (true) false;
+not( not true or true ) and (true ;
+
+arreglar la mierda de and y false

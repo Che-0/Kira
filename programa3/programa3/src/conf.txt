@@ -1,6 +1,17 @@
 ddCa;
+abbcd;
+abCCd;
 dcba;
 aabc;
 Cdba;
 a b c d;
 a b c
+;
+;;
+;
+abcd;
+abCd;
+cdba;
+Cdba;
+dCba;
+baCd;

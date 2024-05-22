@@ -1,20 +1,48 @@
-not( false and true and) ;
+not( false and true ) ;
 false ;
-nottrue;
+not true;
 (true  ;
 not( false and true ) ;
 and   ;
 (true );
 true true  ;
-  not  (   false and true or   false );
+not  (   false and true or false );
 false and not;
 oooooooooo ;
 true;
 false;
-            
+
 
  
 
 wwww
 truee ;
 iiii
+
+not( not true or true ) and (true) ;
+not( not true or true ) and (true ;
+not( not true or true ) and ;
+not( not true or true ) or;
+not( not true or  );
+not( not true and  )  ;
+
+not (;
+not );
+not );
+(;
+);
+or;
+true;
+not;
+false;
+and ;
+falsetrue;
+truetrue;
+or;
+trueor true;
+falsefalse;
+false false;
+and and ;
+andand;
+oror;
+true and ;
