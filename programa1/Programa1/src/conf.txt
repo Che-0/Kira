@@ -55,3 +55,8 @@ and and;
 ((true);
 FALSE TRUE;
 not();
+true and and and and and true;
+not not true;
+false not ( not true);
+not (true and false) and (not true);
+( (true) or (not (true)) ) and (false);

@@ -10,6 +10,8 @@ public class Derivacion {
 
     int errores = 0;
 
+    int cont_and=0;
+    int cont_and_cerrar = 0;
     ArrayList<String> transiciones = new ArrayList<String>(); // transisiones para imprimir al final
     ArrayList<String> transiciones_tokens = new ArrayList<String>(); // transisiones para imprimir al final
 
@@ -53,6 +55,8 @@ public class Derivacion {
         if (this.tokens != null){
             int aux = estadoS(posicion);
 
+
+
             // si usa parentesis = true ejecitamos su comprobacion para saber si se cerro
             if(usa_parentesis){
                 // no se encontro el parentesis de cierre ")" no se encontro
@@ -68,8 +72,9 @@ public class Derivacion {
                     estadoAceptacion = true;
 
                     if(es_and){
+
                         // no se encontro el siguiente token despues de and
-                        if (espera_and == true){
+                        if (espera_and == true ){
                             //System.out.println("no hay ningun token valido despues");
                             lista_errores.add("no hay ningun token valido despues");
                             estadoAceptacion = false;
@@ -129,6 +134,12 @@ public class Derivacion {
                 lista_errores.add("not esperaba argumeto");
             }
 
+            System.out.println(cont_and);
+            System.out.println(cont_and_cerrar);
+            if ( cont_and != cont_and_cerrar){
+                estadoAceptacion = false;
+            }
+
             System.out.println("Derivacion");
             System.out.println(transiciones);
             System.out.println(transiciones_tokens);
@@ -156,8 +167,8 @@ public class Derivacion {
 
     public int estadoS(int x){
         transiciones.add("S-->");
-        errores +=4;
-        if (errores>10){
+        errores +=1;
+        if (errores>2){
             estadoAceptacion = false;
             lista_errores.add("error, imposible de derivar");
             return 0;
@@ -227,6 +238,7 @@ public class Derivacion {
             transiciones.add("T-->");
             //espera_and = false;
             if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false") || this.tokens.get(posicion).equals("(") || this.tokens.get(posicion).equals(")") || this.tokens.get(posicion).equals("not")) {
+
                 return estadoF(posicion);
                 //System.out.println(posicion);
             }
@@ -237,6 +249,7 @@ public class Derivacion {
                 es_and = true; ////////////
                 espera_and = true;
                 posicion += 1;
+                cont_and +=1;
 
                 return estadoT(posicion);
             }
@@ -257,10 +270,18 @@ public class Derivacion {
             if (this.tokens.get(posicion).equals("true") || this.tokens.get(posicion).equals("false") || this.tokens.get(posicion).equals("not")) {
                 // //// estadoX();
                 if (this.tokens.get(posicion).equals("true")){
+                    if(es_and){
+                        cont_and_cerrar +=1;
+                    }
+
                     transiciones_tokens.add("true-->");
                     espera_not = false;
                 }
                 if (this.tokens.get(posicion).equals("false")){
+                    if(es_and){
+                        cont_and_cerrar +=1;
+                    }
+
                     transiciones_tokens.add("false-->");
                     espera_not = false;
                 }
