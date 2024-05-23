@@ -242,6 +242,8 @@ public class Derivacion {
         return  estadoE(posicion);
     }
 
+
+
     public int estadoT(int x) {
         if (estadoX()) {
             transiciones.add("T-->");
