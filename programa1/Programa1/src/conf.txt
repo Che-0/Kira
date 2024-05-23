@@ -54,3 +54,4 @@ and and;
 ((true));
 ((true);
 FALSE TRUE;
+not();

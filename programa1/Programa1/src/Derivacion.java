@@ -30,6 +30,8 @@ public class Derivacion {
     // ya que si es true significara que los de apertura nunca se cerraron
 
     /////////////
+
+    boolean espera_not = false;
     boolean es_and = false;
     boolean espera_and; // si usa and entonces se esperara un token despues
 
@@ -122,6 +124,10 @@ public class Derivacion {
             }
 
             lista_errores.add("no se puede derivar");
+            if (espera_not){
+                estadoAceptacion = false;
+                lista_errores.add("not esperaba argumeto");
+            }
 
             System.out.println("Derivacion");
             System.out.println(transiciones);
@@ -252,13 +258,16 @@ public class Derivacion {
                 // //// estadoX();
                 if (this.tokens.get(posicion).equals("true")){
                     transiciones_tokens.add("true-->");
+                    espera_not = false;
                 }
                 if (this.tokens.get(posicion).equals("false")){
                     transiciones_tokens.add("false-->");
+                    espera_not = false;
                 }
 
                 if (this.tokens.get(posicion).equals("not")){
                     transiciones_tokens.add("not-->");
+                    espera_not = true; // para que solo un token true false
                 }
 
                 error_siguientede_and = false;
