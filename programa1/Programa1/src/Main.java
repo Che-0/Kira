@@ -13,7 +13,7 @@ public class Main {
         //System.out.println(lista.getListaTokens()); // <-- metodo para comprobar lo que se guardo
         ArrayList<String> x = lista.getListaTokens();  //crear un arraylist que contiene todas las lineas con los tokens
         //System.out.println(x);
-        System.out.println(x.get(0));
+        //System.out.println(x.get(0));
 
 
 
@@ -37,9 +37,9 @@ public class Main {
         //Guarda los valores de cada cadena , si es valida o invalida
         ArrayList<Boolean> pilafinal = new ArrayList<>();
 
-        Derivacion dev = new Derivacion(pila.get(23));
-        System.out.println("tons que mami");
-        System.out.println(dev.isEstadoAceptacion());
+//        Derivacion dev = new Derivacion(pila.get(23));
+//        System.out.println("tons que mami");
+//        System.out.println(dev.isEstadoAceptacion());
 
 //        Derivacion itera = new Derivacion(pila.get(8));
 //        System.out.println("tons que mami");
@@ -51,9 +51,9 @@ public class Main {
             pilafinal.add(correcto);
 
         }
-
-        System.out.println("-------analisis------------");
-
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println("                            RESUMEN                                 ");
+        System.out.println("--------------------------------------------------------------------");
         for (int i = 0; i < pila.size(); i++){
             String choro;
             if (pilafinal.get(i)){

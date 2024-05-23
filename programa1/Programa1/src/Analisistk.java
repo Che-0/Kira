@@ -46,6 +46,7 @@ public class Analisistk {
                 contadorCaract +=1;
                 break;
             case "n":
+
                 //System.out.println("n espero o");
                 contadorCaract +=1;
                 if (this.palabra[contadorCaract].equals("o")){
@@ -56,6 +57,7 @@ public class Analisistk {
                     return;
                 }
                 if (this.palabra[contadorCaract].equals("t")){
+                    //System.out.println("not chido");
                     pila.add("not");
                     contadorCaract +=1;
                 }else{
@@ -76,20 +78,21 @@ public class Analisistk {
                 }
                 if (this.palabra[contadorCaract].equals("d")){
                     //System.out.println("d esta chido");
-                    contadorCaract +=1;
-                }else{
-                    this.bien = false;
-                    return;
-                }
-
-                if (this.palabra[contadorCaract].equals(" ")){
-                    //System.out.println("and esta chidoo");
                     pila.add("and");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+
+//                if (this.palabra[contadorCaract].equals(" ")){
+//                    //System.out.println("and esta chidoo");
+//                    pila.add("and");
+//                    contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+//                }
                 break;
 
             case "o":
@@ -105,7 +108,12 @@ public class Analisistk {
                 }
                 break;
 
+
+
             case "t":
+
+
+
                 //System.out.println("t espero r");
                 contadorCaract +=1;
                 if (this.palabra[contadorCaract].equals("r")){
