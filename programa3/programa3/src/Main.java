@@ -18,7 +18,7 @@ public class Main {
             pilafinal.add(dev.getCorrecto());
         }
 
-        System.out.println("--------- Analisis -----------");
+        System.out.println("----------------RESUMEN-----------------");
         for(int i=0 ; i< x.size() ; i++){
             System.out.println(x.get(i) + " --------> " + pilafinal.get(i) );
         }

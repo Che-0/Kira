@@ -45,7 +45,7 @@ public class Derivacion {
     public Derivacion(ArrayList tokens) {
         this.tokens = tokens;
         System.out.println("--------------------------------------------------------------------");
-        System.out.println("<                          U W U                                    >");
+        System.out.println("<                          PROCESO                                  >");
         System.out.println("cadena a validar: "+this.tokens);
         //System.out.println(this.tokens.get(1)); //traer el primer elemento 2
 

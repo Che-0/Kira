@@ -7,6 +7,8 @@ public class Derivacion {
 
     int posicion=0;  // variable para pasar caracter por caracter
 
+
+    ArrayList<String> errores = new ArrayList<String>(); // Almacena las derivaciones
     ArrayList<String> pila = new ArrayList<String>(); // Almacena las derivaciones
     ArrayList<String> caracteres = new ArrayList<String>(); //almacena los caracteres dados
     String tokens ;
@@ -19,14 +21,15 @@ public class Derivacion {
     String correcto;
     public Derivacion(String tonken) {
         this.tokens = tonken;
-        //System.out.println(this.tokens);
+        System.out.println("----------TOKEN A DERIVAR----------------");
+        System.out.println("->"+this.tokens);
 
 
 
 
 
         if (this.tokens != "Null"){
-
+            //System.out.println();
             //System.out.println(this.tokens.length());
             //agregamos cada elemento del string dado a una lista (caracteres)
             for (int i=0 ; i < this.tokens.length() ; i++){
@@ -40,38 +43,50 @@ public class Derivacion {
             ////////// repetidos ---- se encarga de ver si hay letras repetidas
             boolean hayRepetidos = false;
 
+            // si hay algun caracter repetido entonces esta mal
             for (int i = 0; i < caracteres.size(); i++) {
                 for (int j = i + 1; j < caracteres.size(); j++) {
                     if (caracteres.get(i).equals(caracteres.get(j))) {
                         hayRepetidos = true;
+                        errores.add("caracteres repetidos");
                         break;
                     }
                 }
             }
             /////// repetidos
 
-            //si hay repetidos, pues esta mal y no hace el analisi
+            //si hay repetidos, pues esta mal y no hace el analisis
             if (!hayRepetidos){
                 //mientras no nos pasemos de su longitud -1  --- para que no cuente el ";"
                 while (this.posicion != this.caracteres.size()-1){
+                    //System.out.println(pila + " <---- caracteres a derivar");
                     inicialS();
-                    System.out.println(pila);
+                    //System.out.println(pila + " <---- caracteres a derivar");
                 }
                 //System.out.println(pila);  <--------------
 
                 // si en la pila solo quedo el ; entonces esta bien y por lo tanto su tamaño es de uno
                 if (pila.size() == 1 && pila.get(0) ==";"){
+                    System.out.println("Cadena valida ✓");
+                    System.out.println("Elementos restantes en la pila: "+pila);
                     correcto = "cadena valida    ✓";
                 }
                 // si la pila tiene un tamaño superior, esta mal
 
                 else{
+                    System.out.println("Cadena invalida x");
+                    System.out.println("Elementos restantes en la pila: "+pila);
                     correcto = "cadena invalida    x";
                 }
             }
             else {
                 correcto = "cadena invalida    x";
             }
+
+            if (hayRepetidos){
+                System.out.println("Incorrecto: "+ errores);
+            }
+
 
         }
 
@@ -86,8 +101,9 @@ public class Derivacion {
             this.pila.add("A");
             this.pila.add("B");
             this.pila.add(";");
-            //System.out.println(this.pila);
-            System.out.println(caracteres);
+            //System.out.println("desmadre");
+            System.out.println(this.pila + " <--------Pila de simbolos");
+            System.out.println(caracteres +" <--------Entrada");
         }
 
         if ("a".equals(caracteres.get(posicion))) {
@@ -104,9 +120,15 @@ public class Derivacion {
     public void caminoA(){
         this.pila.remove("A");
         this.pila.add("a");
-        System.out.println(this.pila); // <---------
+        System.out.println("°°°°°");
+        System.out.println(this.pila + " Derivacion de A"); // <---------
+        System.out.println("°°°°°");
+        System.out.println(caracteres);
+        System.out.println(pila);
         consume();
         sumar();
+        System.out.println("posicio = "+this.posicion);
+        System.out.println("°°°°°");
         //System.out.println("posicio = "+this.posicion); <-----------
 //        if ( this.posicion >  caracteres.size()-1 ){
 //            this.posicion +=1;
@@ -120,6 +142,7 @@ public class Derivacion {
             this.pila.add("b");
             this.pila.add("d");
             this.pila.add("C");
+            System.out.println(pila + " Derivacion de B");
         }
 
         if ("C".equals(caracteres.get(posicion))) {
@@ -129,7 +152,8 @@ public class Derivacion {
         if ("c".equals(caracteres.get(posicion))) {
             caminoC();
         }
-
+        System.out.println("°°°°°");
+        System.out.println(caracteres);
         System.out.println(this.pila);  //<----------
         consume();
         sumar();
@@ -151,7 +175,10 @@ public class Derivacion {
 
         this.pila.remove("C");
         this.pila.add("c");
-        System.out.println(pila);
+        System.out.println("°°°°°");
+        System.out.println(caracteres);
+        System.out.println(pila + " Derivacion de C");
+
         consume();
         sumar();
 
@@ -165,10 +192,12 @@ public class Derivacion {
 
 
 
-        this.pila.remove("C");
-        System.out.println(pila);
+//        this.pila.remove("C");
+//        System.out.println(pila);
         consume();
         sumar();
+        System.out.println("posicio = "+this.posicion);
+        System.out.println("°°°°°");
 
 //        //System.out.println("posicio = "+this.posicion);
 //        if ( this.posicion >  caracteres.size()-1 ){
