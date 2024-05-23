@@ -136,9 +136,10 @@ public class Derivacion {
 
             System.out.println(cont_and);
             System.out.println(cont_and_cerrar);
-            if ( cont_and != cont_and_cerrar){
+            if ( cont_and != 0){
                 estadoAceptacion = false;
             }
+
 
             System.out.println("Derivacion");
             System.out.println(transiciones);
@@ -271,7 +272,8 @@ public class Derivacion {
                 // //// estadoX();
                 if (this.tokens.get(posicion).equals("true")){
                     if(es_and){
-                        cont_and_cerrar +=1;
+                        //cont_and_cerrar +=1;
+                        cont_and -=1;
                     }
 
                     transiciones_tokens.add("true-->");
@@ -279,7 +281,8 @@ public class Derivacion {
                 }
                 if (this.tokens.get(posicion).equals("false")){
                     if(es_and){
-                        cont_and_cerrar +=1;
+                        //cont_and_cerrar +=1;
+                        cont_and -=1;
                     }
 
                     transiciones_tokens.add("false-->");

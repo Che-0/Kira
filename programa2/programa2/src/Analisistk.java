@@ -76,20 +76,21 @@ public class Analisistk {
                 }
                 if (this.palabra[contadorCaract].equals("d")){
                     //System.out.println("d esta chido");
-                    contadorCaract +=1;
-                }else{
-                    this.bien = false;
-                    return;
-                }
-
-                if (this.palabra[contadorCaract].equals(" ")){
-                    //System.out.println("and esta chidoo");
                     pila.add("and");
                     contadorCaract +=1;
                 }else{
                     this.bien = false;
                     return;
                 }
+
+//                if (this.palabra[contadorCaract].equals(" ")){
+//                    //System.out.println("and esta chidoo");
+//                    pila.add("and");
+//                    contadorCaract +=1;
+//                }else{
+//                    this.bien = false;
+//                    return;
+//                }
                 break;
 
             case "o":
